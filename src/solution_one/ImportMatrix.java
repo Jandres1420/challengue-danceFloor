@@ -15,7 +15,7 @@ public class ImportMatrix {
 
 
     public void readMatrix(){
-        String nombreArchivo = "inputs/DanceFloor01.txt";
+        String nombreArchivo = "inputs/DanceFloor02.txt";
         try (BufferedReader br = new BufferedReader(new FileReader(nombreArchivo))) {
             String linea;
             int cont = 0;
