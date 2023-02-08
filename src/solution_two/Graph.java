@@ -7,9 +7,10 @@ import java.util.List;
 // A class to store a graph edge
 class Edge
 {
-    int source, dest, weight;
+    int  weight;
+    double source,dest;
 
-    public Edge(int source, int dest, int weight)
+    public Edge(double source, double dest, int weight)
     {
         this.source = source;
         this.dest = dest;
@@ -34,7 +35,7 @@ class Graph
 
         // add edges to the directed graph
         for (Edge edge: edges) {
-            adjList.get(edge.source).add(edge);
+            adjList.get((int) edge.source).add(edge);
         }
     }
 }
@@ -55,7 +56,7 @@ class Main
         // do for every edge (v, u)
         for (Edge e: graph.adjList.get(v))
         {
-            int u = e.dest;
+            int u = (int) e.dest;
 
             // if `u` is not yet discovered
             if (!discovered[u]) {
@@ -108,7 +109,7 @@ class Main
             for (Edge e: graph.adjList.get(v))
             {
                 // edge `e` from `v` to `u` having weight `w`
-                int u = e.dest;
+                int u = (int) e.dest;
                 int w = e.weight * -1;		// make edge weight negative
 
                 // if the distance to destination `u` can be shortened by
@@ -129,10 +130,14 @@ class Main
     {
         // List of graph edges as per the above diagram
         List<Edge> edges = Arrays.asList(
-                new Edge(0, 6, 2), new Edge(1, 2, -4), new Edge(1, 4, 1),
-                new Edge(1, 6, 8), new Edge(3, 0, 3), new Edge(3, 4, 5),
-                new Edge(5, 1, 2), new Edge(7, 0, 6), new Edge(7, 1, -1),
-                new Edge(7, 3, 4), new Edge(7, 5, -4)
+                new Edge(25, 24, 1), new Edge(22, 21, 1), new Edge(23, 24, 1),
+                new Edge(23, 24, 1), new Edge(24, 25, 1), new Edge(25, 24, 1),
+                new Edge(25, 26, 1), new Edge(26, 25, 1), new Edge(26, 27, 1),
+                new Edge(27, 28, 1), new Edge(27, 28, 1), new Edge(28, 29, 1),
+                new Edge(23, 24, 1), new Edge(24, 25, 1), new Edge(28, 27, 1),
+                new Edge(28, 29, 1), new Edge(23, 24, 1), new Edge(24, 25, 1),
+                new Edge(28, 27, 1), new Edge(28, 29, 1), new Edge(23, 22, 1),
+                new Edge(27, 26, 1)
         );
 
         // total number of nodes in the graph (labelled from 0 to 7)

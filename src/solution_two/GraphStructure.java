@@ -17,7 +17,7 @@ public class GraphStructure {
                 break;
             }else{
                 System.out.println("source " +possiblePaths.get(i)+ " destination " +possiblePaths.get(i+1));
-                edges.add(new Edge(possiblePaths.get(i),possiblePaths.get(i+1),1));
+              //  edges.add(new Edge(possiblePaths.get(i),possiblePaths.get(i+1),1));
                 i++;
             }
           //
