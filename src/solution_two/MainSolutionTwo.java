@@ -1,6 +1,5 @@
 package solution_two;
 
-import solution_one.EndavaDanceFloor;
 import solution_one.ImportMatrix;
 
 public class MainSolutionTwo {
@@ -8,6 +7,6 @@ public class MainSolutionTwo {
         ImportMatrix importMatrix = new ImportMatrix();
         ConverterEdge converterEdge = new ConverterEdge(importMatrix.getlengthMatrix(), importMatrix.getMatrix());
         GraphStructure graphStructure = new GraphStructure(converterEdge.getPath());
-
+        graphStructure.conectingEdges();
     }
 }

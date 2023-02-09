@@ -12,6 +12,7 @@ public class GraphStructure {
     public GraphStructure(HashMap<String, ArrayList<String>> graph){
         this.graph =graph;
         nodes = new ArrayList<>();
+        creatingNodes();
     }
 
     private void creatingNodes(){
@@ -26,8 +27,12 @@ public class GraphStructure {
         }
     }
 
-    private void conectingEdges(){
-        LongestPath longestPath;
+    public void conectingEdges(){
+        Dfs dfs = new Dfs();
+        for (String node : nodes) {
+            dfs.findLongestPath(node, graph, "");
+        }
+        System.out.println("The longest path is: " + dfs.getLongestPath() + " size " + dfs.getPathSize()) ;
     }
 
 
