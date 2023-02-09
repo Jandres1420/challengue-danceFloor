@@ -7,8 +7,7 @@ public class MainSolutionTwo {
     public static void main(String[] args) {
         ImportMatrix importMatrix = new ImportMatrix();
         ConverterEdge converterEdge = new ConverterEdge(importMatrix.getlengthMatrix(), importMatrix.getMatrix());
-        GraphStructure graphStructure = new GraphStructure(converterEdge.getPaths());
-        graphStructure.createEdges();
+        GraphStructure graphStructure = new GraphStructure(converterEdge.getPath());
 
     }
 }

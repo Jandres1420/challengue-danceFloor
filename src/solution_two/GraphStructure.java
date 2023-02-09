@@ -1,32 +1,34 @@
+
 package solution_two;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class GraphStructure {
-    private ArrayList<Integer> possiblePaths;
-    private List<Edge> edges;
-    public GraphStructure(ArrayList<Integer> possiblePaths){
-        this.possiblePaths = possiblePaths;
-         edges = new ArrayList<>();
+
+    private HashMap<String, ArrayList<String>> graph;
+    private ArrayList<String> nodes;
+    public GraphStructure(HashMap<String, ArrayList<String>> graph){
+        this.graph =graph;
+        nodes = new ArrayList<>();
     }
 
-    public void createEdges(){
-        for(int i = 0; i < possiblePaths.size();i++){
-            if(i==possiblePaths.size()-1){
-                break;
-            }else{
-                System.out.println("source " +possiblePaths.get(i)+ " destination " +possiblePaths.get(i+1));
-              //  edges.add(new Edge(possiblePaths.get(i),possiblePaths.get(i+1),1));
-                i++;
+    private void creatingNodes(){
+        for(String key : graph.keySet()){
+            nodes.add(key);
+            for (int i = 0 ; i <graph.get(key).size();i++){
+                if(!nodes.contains(graph.get(key).get(i))){
+                    nodes.add(graph.get(key).get(i));
+                }
             }
-          //
+
         }
     }
 
-    public int numberOfNodes(){
-
-        return 0;
+    private void conectingEdges(){
+        LongestPath longestPath;
     }
+
 
 }
