@@ -1,4 +1,4 @@
-package solution_two;
+package solution;
 
 
 import java.util.*;
@@ -28,7 +28,7 @@ public class ConverterEdge {
             System.out.println("La matriz esta vacia");
         }
         for (int i = 0 ; i < length ; i++){
-            for (int j = 0 ; j < length ; j++){
+            for (int j = 0 ; j < length ; j++){ // O(n) + O(n^2)
                 if(i==length-1 && j==length-1)break;
                 else addingPath(i,j);
             }

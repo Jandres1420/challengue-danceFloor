@@ -1,4 +1,4 @@
-package solution_one;
+package solution;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -15,11 +15,11 @@ public class ImportMatrix {
 
 
     public void readMatrix(){
-        String nombreArchivo = "inputs/DanceFloor01.txt";
+        String nombreArchivo = "inputs/DanceFloor03.txt";
         try (BufferedReader br = new BufferedReader(new FileReader(nombreArchivo))) {
             String linea;
             int cont = 0;
-            while ((linea = br.readLine()) != null) {
+            while ((linea = br.readLine()) != null) { //O)(n)
                 if(cont == 0){
                     lengthMatrix = Integer.parseInt(linea);
                     matrix = new int[lengthMatrix][lengthMatrix];

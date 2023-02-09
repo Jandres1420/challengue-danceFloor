@@ -1,6 +1,3 @@
 
 >
 danceFloor.iml,5\0\50e96a0984a0f73b2bb8343435200c99223d7362
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

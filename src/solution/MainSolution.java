@@ -1,8 +1,6 @@
-package solution_two;
+package solution;
 
-import solution_one.ImportMatrix;
-
-public class MainSolutionTwo {
+public class MainSolution {
     public static void main(String[] args) {
         ImportMatrix importMatrix = new ImportMatrix();
         ConverterEdge converterEdge = new ConverterEdge(importMatrix.getlengthMatrix(), importMatrix.getMatrix());

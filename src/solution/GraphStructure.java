@@ -1,9 +1,8 @@
 
-package solution_two;
+package solution;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class GraphStructure {
 
@@ -15,11 +14,11 @@ public class GraphStructure {
         creatingNodes();
     }
 
-    private void creatingNodes(){
+    private void creatingNodes(){// O(n^2)
         for(String key : graph.keySet()){
             nodes.add(key);
             for (int i = 0 ; i <graph.get(key).size();i++){
-                if(!nodes.contains(graph.get(key).get(i))){
+                if(!nodes.contains(graph.get(key).get(i))){ //O(n)
                     nodes.add(graph.get(key).get(i));
                 }
             }

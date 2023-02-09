@@ -1,6 +1,4 @@
-package solution_two;
-
-import solution_one.ImportMatrix;
+package solution;
 
 import java.util.*;
 
