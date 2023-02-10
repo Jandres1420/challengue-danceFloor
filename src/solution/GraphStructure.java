@@ -5,11 +5,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GraphStructure {
-
+    private int length;
     private HashMap<String, ArrayList<String>> graph;
     private ArrayList<String> nodes;
-    public GraphStructure(HashMap<String, ArrayList<String>> graph){
+    public GraphStructure(HashMap<String, ArrayList<String>> graph, int length){
         this.graph =graph;
+        this.length = length;
         nodes = new ArrayList<>();
         creatingNodes();
     }
@@ -31,8 +32,16 @@ public class GraphStructure {
         for (String node : nodes) {
             dfs.findLongestPath(node, graph, "");
         }
-        System.out.println("The longest path is: " + dfs.getLongestPath() + " size " + dfs.getPathSize()) ;
+        printLongestPath(dfs);
     }
 
+    public void printLongestPath(Dfs dfs){
+        if (length<=0){
+            System.out.println("Put a correct size") ;
+        }else if(length==1){
+        }else{
+            System.out.println("The longest path is: " + dfs.getLongestPath() + " \nTotal of Endavans " + dfs.getPathSize()) ;
+        }
 
+    }
 }

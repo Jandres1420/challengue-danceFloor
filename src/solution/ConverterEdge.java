@@ -19,13 +19,11 @@ public class ConverterEdge {
         path = new HashMap<>();
        // getRecursive(matrix,0,0);
         getPossiblePaths();
-        getHashMap();
-        joiningMap();
     }
     public void getPossiblePaths(){
 
-        if(length ==0) {
-            System.out.println("La matriz esta vacia");
+        if(length ==1) {
+            System.out.println("The longest path is: " + matrix[0][0] + " \nTotal of Endavans " + 1);
         }
         for (int i = 0 ; i < length ; i++){
             for (int j = 0 ; j < length ; j++){ // O(n) + O(n^2)
@@ -100,26 +98,13 @@ public class ConverterEdge {
         return possiblePaths;
     }
 
-    public void getHashMap(){/**
-        List<String> currentKeys = new ArrayList<>();
-        int cont = 0;
-        for(String key : path.keySet()){
-            for (int i = 0; i<path.get(key).size();i++){
-                System.out.println(key);
-
-            }
-            if (path.get(key).size()>cont){
-                cont = path.get(key).size();
-            }
-        }
-        System.out.println("Esta es la salida con mayores caminos " + cont);*/
-    }
-    public void joiningMap(){
-
-    }
 
     public HashMap<String, ArrayList<String>> getPath() {
         return path;
+    }
+
+    public int getLength() {
+        return length;
     }
 
     public void setPath(HashMap<String, ArrayList<String>> path) {
